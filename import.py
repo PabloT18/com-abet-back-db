@@ -422,7 +422,7 @@ def deleteData(connection):
     # conn.close()
 
 
-# deleteData(connection)
+deleteData(connection)
 
 asignaturas(df, connection)
 docentes(df, connection)

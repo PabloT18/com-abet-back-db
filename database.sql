@@ -85,7 +85,7 @@ Create table rubrica_so (rub_id serial primary key,
                        	 CONSTRAINT fk_rub_grp FOREIGN KEY (grp_id) REFERENCES grupos (grp_id),
                        	 CONSTRAINT fk_rub_nvl FOREIGN KEY (rub_niv) REFERENCES niveles_cri (nvl_id),
                        	 CONSTRAINT fk_rub_cri FOREIGN KEY (cri_id) REFERENCES criterios_so (cri_id),
-						 CONSTRAINT uq_rubrica UNIQUE (doc_id, est_id, grp_id, cri_id, rub_niv)
+						 CONSTRAINT uq_rubrica UNIQUE (doc_id, est_id, grp_id, cri_id)
 						);
 
 						insert into rubrica_so 
