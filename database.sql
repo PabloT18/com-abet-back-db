@@ -100,10 +100,21 @@ Create table rubrica_so (rub_id serial primary key,
 SELECT * FROM public.asignaturas;  54
 SELECT * FROM public.docentes; 99
 SELECT * FROM public.estudiantes; 253
-SELECT * FROM public.grupos; 216
+SELECT * FROM public.grupos; 218
 SELECT * FROM public.inscripciones_grupo; 1222
 SELECT * FROM public.student_outcomes; 6
 SELECT * FROM public.criterios_so; 17
 SELECT * FROM public.niveles_cri; 68
-SELECT * FROM public.criterios_asignaturas;
-SELECT * FROM public.rubrica_so; 125
+SELECT * FROM public.criterios_asignaturas; 125
+SELECT * FROM public.rubrica_so; 
+
+SELECT count(*) FROM public.asignaturas;
+SELECT count(*) FROM public.docentes;
+SELECT count(*) FROM public.estudiantes;
+SELECT count(*) FROM public.grupos;
+SELECT count(*) FROM public.inscripciones_grupo;
+SELECT count(*) FROM public.student_outcomes;
+SELECT count(*) FROM public.criterios_so;
+SELECT count(*) FROM public.niveles_cri;
+SELECT count(*) FROM public.criterios_asignaturas
+SELECT count(*) FROM public.rubrica_so;

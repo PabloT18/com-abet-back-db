@@ -1,0 +1,23 @@
+cri_id,cri_descripcion,sto_id
+1,Analiza las especificaciones de un problema dado entendiendo los parámetros y datos iniciales mediante la aplicación de las ciencias exactas e identifica los procesos adecuados para brindar una solución.,1
+2,Identifica los requerimientos de los actores y los componentes para brindar una solución computacional a un problema dado.,1
+3,"Analiza las especificaciones de un problema dado e identifica técnicas, métodos, estructuras de datos, arquitecturas o infraestructura informática para brindar una solución computacional.",1
+4,"Diseña los componentes de una solución basada en cómputo, identifica a los diferentes actores y su conjunto de requerimientos.",2
+5,"Implementa una solución basada en cómputo para un problema dado, utilizando el diseño de componentes establecidos según los requerimientos de los actores.",2
+6,"Evalúa una solución basada en cómputo para un problema dado, de acuerdo a los requerimientos de los actores y el diseño propuesto.",2
+7,Comunica ideas de manera escrita y ordenada argumentándolas con base científica y técnica en un contexto profesional.,3
+8,"Comunica ideas de manera oral, fortaleciéndolas con lenguaje no verbal y facilitando la captación de su discurso.",3
+9,"Brinda una solución computacional a un problema profesional, identificando dilemas éticos con sus actores y consecuencias.",4
+10,"Demuestra honestidad e integridad en cuanto a cumplir preceptos éticos y deontológicos, asume la responsabilidad de su actividad profesional con respeto hacia sus compañeros, conforme a lo establecido en las normas que rigen a la sociedad.",4
+11,"IMPACTO E INFLUENCIA
+ Intención de persuadir, convencer, influenciar o impresionar a otros para obtener su apoyo; o el deseo de tener un impacto o efecto específico en los demás.",5
+12,"TRABAJO EN EQUIPO Y COOPERACIÓN
+Implica una intención genérica por trabajo cooperativo con otros, de trabajar juntos y desarrollar colaboración, como opuesto a trabajar separadamente o competitivamente.",5
+13,"FORMACIÓN DE RELACIONES Y CONTACTO
+Trabajo para realizar o mantener relaciones amistosas, amables, o redes de contactos con gente que es o puede ser útil algún día para el logro de las metas laborales. ",5
+14,"DESARROLLO DE LOS DEMÁS 
+Versión de Impacto e Influencia, en la que la intención es enseñar o fomentar el desarrollo de alguna o de algunas personas. Implica la capacidad para emprender acciones eficaces para mejorar el talento y las capacidades de los demás.",5
+15,"LIDERAZGO DE EQUIPO
+Intención de tomar el rol de líder de un equipo u otro grupo.",5
+16,Aplica teoría de ciencias de la computación y fundamentos de desarrollo de software para identificar y diseñar una solución apropiada para un problema dado. ,6
+17,Implementa la solución acorde al diseño usando teoría de las ciencias de computación y fundamentos de desarrollo de software.,6

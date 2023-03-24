@@ -14,7 +14,8 @@ connection = psycopg2.connect(user="pablodb",
 
 
 # df = pd.read_excel('listado_estudiantes_materias.xlsx')
-df = pd.read_csv('listado_estudiantes_materias.csv', delimiter=';', dtype=str)
+# df = pd.read_csv('listado_estudiantes_materias.csv', delimiter=';', dtype=str)
+df = pd.read_csv('Listado_graduados_correos.csv', delimiter=';', dtype=str)
 
 
 print(df.shape)
@@ -25,8 +26,8 @@ def asignaturas(datos, connection):
 
     asignaturas = datos.drop_duplicates(['COD_ASIGNATURA'], keep='first')
 
-    sqldelete = 'DELETE FROM public.asignaturas;'
-    sqlAlterSeqnce = 'ALTER SEQUENCE asignaturas_asi_id_seq RESTART WITH 1;'
+    # sqldelete = 'DELETE FROM public.asignaturas;'
+    # sqlAlterSeqnce = 'ALTER SEQUENCE asignaturas_asi_id_seq RESTART WITH 1;'
     sql = """INSERT INTO asignaturas
                  (asi_codigo, asi_descripcion, asi_nivel)
                  VALUES
@@ -35,8 +36,8 @@ def asignaturas(datos, connection):
 
         conn = connection
         cur = conn.cursor()
-        cur.execute(sqldelete)
-        cur.execute(sqlAlterSeqnce)
+        # cur.execute(sqldelete)
+        # cur.execute(sqlAlterSeqnce)
         for index, row in asignaturas.iterrows():
             cod = row['COD_ASIGNATURA']
             des = row['ASIGNATURA']
@@ -59,8 +60,8 @@ def docentes(datos, connection):
 
     docentesDF = datos.drop_duplicates(['CEDULA_DOCENTE'], keep='first')
 
-    sqldelete = 'DELETE FROM public.docentes;'
-    sqlAlterSeqnce = 'ALTER SEQUENCE docentes_doc_id_seq RESTART WITH 1;'
+    # sqldelete = 'DELETE FROM public.docentes;'
+    # sqlAlterSeqnce = 'ALTER SEQUENCE docentes_doc_id_seq RESTART WITH 1;'
     sql = """INSERT INTO docentes
                  ( doc_cedula, doc_nombre, doc_correo, doc_user_type)
 	            VALUES ( %s, %s, %s, %s )"""
@@ -68,8 +69,8 @@ def docentes(datos, connection):
 
         conn = connection
         cur = conn.cursor()
-        cur.execute(sqldelete)
-        cur.execute(sqlAlterSeqnce)
+        # cur.execute(sqldelete)
+        # cur.execute(sqlAlterSeqnce)
         for index, row in docentesDF.iterrows():
             ced = str(row['CEDULA_DOCENTE'])
             name = row['DOCENTE']
@@ -92,8 +93,8 @@ def estudintes(datos, connection):
 
     estudaintesDF = datos.drop_duplicates(['CODIGO_ESTUDIANTE'], keep='first')
 
-    sqldelete = 'DELETE FROM public.estudiantes;'
-    sqlAlterSeqnce = 'ALTER SEQUENCE estudiantes_est_id_seq RESTART WITH 1;'
+    # sqldelete = 'DELETE FROM public.estudiantes;'
+    # sqlAlterSeqnce = 'ALTER SEQUENCE estudiantes_est_id_seq RESTART WITH 1;'
     sql = """INSERT INTO estudiantes
                  ( est_codigo, est_cedula, est_nombre, est_correo, est_genero)
 	            VALUES ( %s, %s, %s, %s, %s )"""
@@ -101,8 +102,8 @@ def estudintes(datos, connection):
 
         conn = connection
         cur = conn.cursor()
-        cur.execute(sqldelete)
-        cur.execute(sqlAlterSeqnce)
+        # cur.execute(sqldelete)
+        # cur.execute(sqlAlterSeqnce)
         for index, row in estudaintesDF.iterrows():
             cod = row['CODIGO_ESTUDIANTE']
 
@@ -130,8 +131,8 @@ def grupos(datos, connection):
         ['COD_ASIGNATURA', 'GRUPO', 'CORREO_DOCENTE'], keep='first')
     print(grupodf.shape)
 
-    sqldelete = 'DELETE FROM public.grupos;'
-    sqlAlterSeqnce = 'ALTER SEQUENCE grupos_grp_id_seq RESTART WITH 1;'
+    # sqldelete = 'DELETE FROM public.grupos;'
+    # sqlAlterSeqnce = 'ALTER SEQUENCE grupos_grp_id_seq RESTART WITH 1;'
     sql = """INSERT INTO grupos
                  ( grp_nombre, grp_habilitado, grp_asi_id, grp_doc_id)
                 VALUES ( %s, %s, %s, %s )"""
@@ -143,8 +144,8 @@ def grupos(datos, connection):
 
         conn = connection
         cur = conn.cursor()
-        cur.execute(sqldelete)
-        cur.execute(sqlAlterSeqnce)
+        # cur.execute(sqldelete)
+        # cur.execute(sqlAlterSeqnce)
 
         # docente = cur.execute(sqlDoc, ('0103771648'))
         cur.execute(sqlDoce)
@@ -191,8 +192,8 @@ def inscripcion_grupos(datos, connection):
     # grupodf = datos.drop_duplicates(['COD_ASIGNATURA', 'GRUPO'], keep='first')
     # print(grupos.shape)
 
-    sqldelete = 'DELETE FROM public.inscripciones_grupo;'
-    sqlAlterSeqnce = 'ALTER SEQUENCE inscripciones_grupo_ins_id_seq RESTART WITH 1;'
+    # sqldelete = 'DELETE FROM public.inscripciones_grupo;'
+    # sqlAlterSeqnce = 'ALTER SEQUENCE inscripciones_grupo_ins_id_seq RESTART WITH 1;'
     sql = """INSERT INTO inscripciones_grupo
                  ( ins_habilitado, ins_periodo,
                   ins_matricula_num, est_codigo, grp_id)
@@ -206,8 +207,8 @@ def inscripcion_grupos(datos, connection):
 
         conn = connection
         cur = conn.cursor()
-        cur.execute(sqldelete)
-        cur.execute(sqlAlterSeqnce)
+        # cur.execute(sqldelete)
+        # cur.execute(sqlAlterSeqnce)
 
         # docente = cur.execute(sqlDoc, ('0103771648'))
         cur.execute(sqlgrupos)
@@ -360,8 +361,8 @@ def niveles_cri(connection):
 def crit_asignatura(connection):
     print("crit_asignatura")
 
-    sqldelete = 'DELETE FROM public.criterios_asignaturas;'
-    sqlAlterSeqnce = 'ALTER SEQUENCE criterios_asignaturas_cra_id_seq RESTART WITH 1;'
+    # sqldelete = 'DELETE FROM public.criterios_asignaturas;'
+    # sqlAlterSeqnce = 'ALTER SEQUENCE criterios_asignaturas_cra_id_seq RESTART WITH 1;'
     sql = """INSERT INTO criterios_asignaturas
                  (asi_codigo,cri_id)
                  VALUES
@@ -371,10 +372,11 @@ def crit_asignatura(connection):
 
         conn = connection
         cur = conn.cursor()
-        cur.execute(sqldelete)
-        cur.execute(sqlAlterSeqnce)
+        # cur.execute(sqldelete)
+        # cur.execute(sqlAlterSeqnce)
 
-        for cra in dataSO.criteriosAsignaturas:
+        # for cra in dataSO.criteriosAsignaturas:
+        for cra in dataSO.criteriosAsignaturasGraduados:
             asi_id = cra['asi_id']
             cri_id = cra['cri_id']
             print(cri_id)
@@ -422,17 +424,17 @@ def deleteData(connection):
     # conn.close()
 
 
-deleteData(connection)
+# deleteData(connection)
 
-asignaturas(df, connection)
-docentes(df, connection)
-estudintes(df, connection=connection)
-grupos(df, connection=connection)
-inscripcion_grupos(df, connection=connection)
+# asignaturas(df, connection)
+# docentes(df, connection)
+# estudintes(df, connection=connection)
+# grupos(df, connection=connection)
+# inscripcion_grupos(df, connection=connection)
 
-studen_outcomes(connection)
-criterios_so(connection=connection)
-niveles_cri(connection=connection)
+# studen_outcomes(connection)
+# criterios_so(connection=connection)
+# niveles_cri(connection=connection)
 crit_asignatura(connection=connection)
 
 connection.close()

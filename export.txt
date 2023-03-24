@@ -1,0 +1,31 @@
+
+COPY asignaturas TO '/Users/pablo/Documents/dev/UPS/ABET/back/db/exports/asignaturas.csv' DELIMITER ',' CSV HEADER;
+COPY docentes TO '/Users/pablo/Documents/dev/UPS/ABET/back/db/exports/docentes.csv' DELIMITER ',' CSV HEADER;
+COPY estudiantes TO '/Users/pablo/Documents/dev/UPS/ABET/back/db/exports/estudiantes.csv' DELIMITER ',' CSV HEADER;
+COPY grupos TO '/Users/pablo/Documents/dev/UPS/ABET/back/db/exports/grupos.csv' DELIMITER ',' CSV HEADER;
+COPY inscripciones_grupo TO '/Users/pablo/Documents/dev/UPS/ABET/back/db/exports/inscripciones_grupo.csv' DELIMITER ',' CSV HEADER;
+COPY student_outcomes TO '/Users/pablo/Documents/dev/UPS/ABET/back/db/exports/student_outcomes.csv' DELIMITER ',' CSV HEADER;
+COPY criterios_so TO '/Users/pablo/Documents/dev/UPS/ABET/back/db/exports/criterios_so.csv' DELIMITER ',' CSV HEADER;
+COPY niveles_cri TO '/Users/pablo/Documents/dev/UPS/ABET/back/db/exports/niveles_cri.csv' DELIMITER ',' CSV HEADER;
+COPY criterios_asignaturas TO '/Users/pablo/Documents/dev/UPS/ABET/back/db/exports/criterios_asignaturas.csv' DELIMITER ',' CSV HEADER;
+COPY rubrica_so TO '/Users/pablo/Documents/dev/UPS/ABET/back/db/exports/rubrica_so.csv' DELIMITER ',' CSV HEADER;
+
+
+Tabla asignaturas : cada una de las asignaturas que se imparten en la carrera. 
+Tabla docentes : Todos los docentes que dictan dichas asignaturas, estan incluidos docentes de materias comunues que no son especificamente de nuestra carrea.
+Tabla estudiantes : Todos los estudiantes de la carrera.
+Tabla grupos : Todos los grupos que se han ofertado en el perido 61.
+Tabla inscripciones_grupo : En esta tabla cada registro hace referencia a a lainscipcion de un estudiante a un Grupo.
+Tabla student_outcomes : Listado de cada Student Outcomes.
+Tabla criterios_so : Lsitado de todos los cirterios, cada registro esta relacionado a un StudentOutcome
+Tabla niveles_cri : Listado de todos las descripciones de los nivles, donde cada registro esta relacionado con un Criterio especifico
+Tabla criterios_asignaturas : Tabla relacional (M-M) entre los criterios y las asignaturas. 
+Tabla rubrica_so : Tabal donde se registra cada una de las rubircas realizadas por el doncente. 
+
+
+
+
+
+
+
+
