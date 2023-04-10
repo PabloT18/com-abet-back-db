@@ -15,7 +15,12 @@ connection = psycopg2.connect(user="pablodb",
 
 # df = pd.read_excel('listado_estudiantes_materias.xlsx')
 # df = pd.read_csv('listado_estudiantes_materias.csv', delimiter=';', dtype=str)
-df = pd.read_csv('Listado_graduados_correos.csv', delimiter=';', dtype=str)
+# LEctura del archivo de graduados
+# df = pd.read_csv('Listado_graduados_correos.csv', delimiter=';', dtype=str)
+
+# LEctura del archivo de Empresas
+df = pd.read_csv('Listado_empresas_correos.csv', delimiter=';', dtype=str)
+
 
 
 print(df.shape)
@@ -189,7 +194,7 @@ def grupos(datos, connection):
 
 def inscripcion_grupos(datos, connection):
 
-    # grupodf = datos.drop_duplicates(['COD_ASIGNATURA', 'GRUPO'], keep='first')
+    grupodf = datos.drop_duplicates(['COD_ASIGNATURA', 'GRUPO'], keep='first')
     # print(grupos.shape)
 
     # sqldelete = 'DELETE FROM public.inscripciones_grupo;'
@@ -375,8 +380,13 @@ def crit_asignatura(connection):
         # cur.execute(sqldelete)
         # cur.execute(sqlAlterSeqnce)
 
+        # FOR para asignaturas
         # for cra in dataSO.criteriosAsignaturas:
-        for cra in dataSO.criteriosAsignaturasGraduados:
+        # FOR para graduados
+        # for cra in dataSO.criteriosAsignaturasGraduados:
+        # FOR para asignatura Empresas
+        for cra in dataSO.criteriosAsignaturasEMPRESAS:
+
             asi_id = cra['asi_id']
             cri_id = cra['cri_id']
             print(cri_id)

@@ -385,6 +385,78 @@ nivelesCri = [
 # Implementa la solución usando teoría de las ciencias de computación y fundamentos de desarrollo de software; cumpliendo con todo el diseño propuesto
 # Implementa la solución usando teoría de las ciencias de computación y fundamentos de desarrollo de software; cumpliendo con todo el diseño propuesto, alcanzando los resultados previstos con los menores recursos posibles.
 
+criteriosAsignaturasEMPRESAS = [
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 1
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 2
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 3
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 4
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 5
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 6
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 7
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 8
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 9
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 10
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 11
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 12
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 13
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 14
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 15
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 16
+    },
+    {
+        "asi_id": "E-CT-ICO-EMP-ICC",
+        "cri_id": 17
+    },
+
+]
+
 criteriosAsignaturasGraduados = [
     {
         "asi_id": "E-CT-ICO-GRA-ICC",
