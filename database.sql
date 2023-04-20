@@ -97,16 +97,16 @@ Create table rubrica_so (rub_id serial primary key,
 
 -----
 
-SELECT * FROM public.asignaturas;  54 - 55 
-SELECT * FROM public.docentes; 99 - 152
-SELECT * FROM public.estudiantes; 253 - 306
-SELECT * FROM public.grupos; 218 - 271
-SELECT * FROM public.inscripciones_grupo; 1222 - 1275
+SELECT * FROM public.asignaturas;  54 - 55 - 55 - 56
+SELECT * FROM public.docentes; 99 - 152 - 152 - 159 
+SELECT * FROM public.estudiantes; 253 - 306 - 306 - 313
+SELECT * FROM public.grupos; 218 - 271 - 271 - 278
+SELECT * FROM public.inscripciones_grupo; 1222 - 1275 -1275 - 1282
 SELECT * FROM public.student_outcomes; 6
 SELECT * FROM public.criterios_so; 17
 SELECT * FROM public.niveles_cri; 68
-SELECT * FROM public.criterios_asignaturas; 125 - 142
-SELECT * FROM public.rubrica_so; 1603
+SELECT * FROM public.criterios_asignaturas; 125 - 142 -142 - 159 - (12/03)160 
+SELECT * FROM public.rubrica_so; 1603 - 1790 - 
 
 SELECT count(*) FROM public.asignaturas;
 SELECT count(*) FROM public.docentes;
