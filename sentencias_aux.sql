@@ -48,7 +48,11 @@ select grp.grp_nombre from rubrica_so rub, grupos grp where rub.grp_id  = grp.gr
 
 
 --- Conteo de rubricas de estudaintes ralizacad
-SELECT count(*) FROM rubrica_so rub, grupos grp, asignaturas asi WHERE rub.grp_id = grp.grp_id and  grp.grp_asi_id = asi.asi_id and asi.id_asi = 33 and asi.asi_id = 34 and asi.asi_id != 40 and asi.asi_id != 43;
+SELECT count(*) FROM rubrica_so rub, grupos grp, asignaturas asi WHERE rub.grp_id = grp.grp_id and  grp.grp_asi_id = asi.asi_id and asi.id_asi = 33 and asi.asi_id = 34 and asi.asi_id = 40 and asi.asi_id = 43;
 
+
+--- estudaines de practica elavuados 
+
+Select count(res.est_id) from (SELECT est.est_id FROM rubrica_so rub, estudiantes est,grupos grp,  asignaturas asi WHERE rub.est_id = est.est_id and rub.grp_id = grp.grp_id and  grp.grp_asi_id = asi.asi_id and asi.asi_id in (33, 34,40,43)  group by est.est_id) as res;
 
 

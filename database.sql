@@ -1,3 +1,16 @@
+/// arreglar postgres 
+en /etc/postgresql/12/main
+// archivo a editar
+psql -U pablodb -d ups_abet -W
+
+// reiniciar postgres
+sudo systemctl restart postgresql
+
+// entrar a ups_abet
+psql -U pablodb -d ups_abet -W
+
+
+
 create table asignaturas (asi_id serial primary key,
 						  asi_descripcion varchar(50)UNIQUE NOT NULL,
 						  asi_codigo varchar(50) NOT NULL,
