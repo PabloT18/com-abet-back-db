@@ -486,15 +486,15 @@ def deleteData(connection):
 
 # deleteData(connection)
 
-# asignaturas(df, connection)
-# docentes(df, connection)
-# estudintes(df, connection=connection)
-# grupos(df, connection=connection)
-# inscripcion_grupos(df, connection=connection)
+asignaturas(df, connection)
+docentes(df, connection)
+estudintes(df, connection=connection)
+grupos(df, connection=connection)
+inscripcion_grupos(df, connection=connection)
 
-# studen_outcomes(connection)
-# criterios_so(connection=connection)
-# niveles_cri(connection=connection)
+studen_outcomes(connection)
+criterios_so(connection=connection)
+niveles_cri(connection=connection)
 crit_asignatura(connection=connection)
 
 connection.close()
