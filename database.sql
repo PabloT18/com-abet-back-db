@@ -3,6 +3,8 @@ en /etc/postgresql/12/main
 // archivo a editar
 psql -U pablodb -d ups_abet -W
 
+Cambiar md5 por peer
+
 // reiniciar postgres
 sudo systemctl restart postgresql
 
