@@ -210,7 +210,8 @@ CREATE TABLE public.grupos (
     grp_nombre character varying(50) NOT NULL,
     grp_habilitado boolean NOT NULL,
     grp_asi_id integer NOT NULL,
-    grp_doc_id integer NOT NULL
+    grp_doc_id integer NOT NULL,
+    grp_periodo integer NOT NULL,
 );
 
 
@@ -357,6 +358,7 @@ ALTER SEQUENCE public.rubrica_so_rub_id_seq OWNED BY public.rubrica_so.rub_id;
 CREATE TABLE public.student_outcomes (
     sto_id integer NOT NULL,
     sto_descripcion character varying(255) NOT NULL,
+    sto_descripcion_en character varying(255) NOT NULL,
     sto_codigo character varying(255) NOT NULL
 );
 

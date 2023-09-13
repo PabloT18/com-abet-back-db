@@ -12,8 +12,9 @@ psql -U pablodb -d ups_abet -W
 
 
 create table asignaturas (asi_id serial primary key,
-						  asi_descripcion varchar(50)UNIQUE NOT NULL,
-						  asi_codigo varchar(50) NOT NULL,
+						  asi_descripcion varchar(250) NOT NULL,
+						  asi_descripcion_en varchar(250) NOT NULL,
+						  asi_codigo varchar(50) UNIQUE NOT NULL,
 						  asi_nivel varchar(50) NOT NULL
 						 );
 
@@ -36,6 +37,7 @@ create table estudiantes (est_id serial primary key,
 
 
 create table grupos (grp_id serial primary key,
+						grp_periodo integer not NULL,
 						  grp_nombre varchar(50) NOT NULL,
                           grp_habilitado boolean NOT NULL,
 						  grp_asi_id integer  NOT NULL,
@@ -45,7 +47,6 @@ create table grupos (grp_id serial primary key,
 					);
 
 create table inscripciones_grupo (ins_id serial primary key,
-						  
                           ins_habilitado boolean NOT NULL,
                           ins_periodo integer NOT NULL,
                           ins_matricula_num integer NOT NULL,
@@ -58,12 +59,14 @@ create table inscripciones_grupo (ins_id serial primary key,
 
 create table student_outcomes (sto_id serial primary key,
 						  sto_descripcion varchar(255) NOT NULL,
+						  sto_descripcion_en varchar(255) NOT NULL,
 						  sto_codigo varchar(255) UNIQUE NOT NULL
 						  
 						 );
 
 create table criterios_so (cri_id serial primary key,
 						  cri_descripcion Text NOT NULL,
+						  
 						  sto_id integer NOT NULL,
                        	 CONSTRAINT fk_sto FOREIGN KEY (sto_id) REFERENCES student_outcomes (sto_id)
 						  
@@ -108,6 +111,21 @@ Create table rubrica_so (rub_id serial primary key,
                  		VALUES (74,10,146,2,6 );
 
 
+--- eliminar las tablas 
+DROP TABLE IF EXISTS rubrica_so;
+DROP TABLE IF EXISTS criterios_asignaturas;
+DROP TABLE IF EXISTS niveles_cri;
+DROP TABLE IF EXISTS criterios_so;
+DROP TABLE IF EXISTS student_outcomes;
+DROP TABLE IF EXISTS inscripciones_grupo;
+DROP TABLE IF EXISTS grupos;
+DROP TABLE IF EXISTS estudiantes;
+DROP TABLE IF EXISTS docentes;
+DROP TABLE IF EXISTS asignaturas;
+
+
+
+
 -----
 
 SELECT * FROM public.asignaturas;  54 - 55 - 55 - 56
@@ -121,13 +139,13 @@ SELECT * FROM public.niveles_cri; 68
 SELECT * FROM public.criterios_asignaturas; 125 - 142 -142 - 159 - (12/03)160 
 SELECT * FROM public.rubrica_so; 1603 - 1790 - 
 
-SELECT count(*) FROM public.asignaturas;
-SELECT count(*) FROM public.docentes;
-SELECT count(*) FROM public.estudiantes;
-SELECT count(*) FROM public.grupos;
-SELECT count(*) FROM public.inscripciones_grupo;
-SELECT count(*) FROM public.student_outcomes;
-SELECT count(*) FROM public.criterios_so;
-SELECT count(*) FROM public.niveles_cri;
-SELECT count(*) FROM public.criterios_asignaturas;
-SELECT count(*) FROM public.rubrica_so;
+SELECT count(*) FROM asignaturas;
+SELECT count(*) FROM docentes;
+SELECT count(*) FROM estudiantes;
+SELECT count(*) FROM grupos;
+SELECT count(*) FROM inscripciones_grupo;
+SELECT count(*) FROM student_outcomes;
+SELECT count(*) FROM criterios_so;
+SELECT count(*) FROM niveles_cri;
+SELECT count(*) FROM criterios_asignaturas;
+SELECT count(*) FROM rubrica_so;
