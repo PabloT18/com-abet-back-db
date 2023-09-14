@@ -15,7 +15,8 @@ connection = psycopg2.connect(user="pablodb",
                               database="ups_abet_elec")
 
 
-df = pd.read_excel('data_elec/listado_estudiantes_materias.xlsx')
+# df = pd.read_excel('data_elec/listado_estudiantes_materias.xlsx')
+df = pd.read_excel('data_elec/listado_gra_emp_materias_Sep2023.xlsx')
 # df = pd.read_csv('listado_estudiantes_materias.csv', delimiter=';', dtype=str)
 # LEctura del archivo de graduados
 # df = pd.read_csv('Listado_graduados_correos.csv', delimiter=';', dtype=str)
@@ -45,8 +46,8 @@ def asignaturas(datos, connection):
 
         conn = connection
         cur = conn.cursor()
-        cur.execute(sqldelete)
-        cur.execute(sqlAlterSeqnce)
+        # cur.execute(sqldelete)
+        # cur.execute(sqlAlterSeqnce)
         contadorasig = 0
         for index, row in asignaturas.iterrows():
             contadorasig = contadorasig+1
@@ -112,7 +113,8 @@ def estudintes(datos, connection):
     # sqlAlterSeqnce = 'ALTER SEQUENCE estudiantes_est_id_seq RESTART WITH 1;'
     sql = """INSERT INTO estudiantes
                  ( est_codigo, est_cedula, est_nombre, est_correo, est_genero)
-	            VALUES ( %s, %s, %s, %s, %s )"""
+	            VALUES ( %s, %s, %s, %s, %s )
+             ON CONFLICT (est_codigo) DO NOTHING"""
     try:
 
         conn = connection
@@ -153,13 +155,21 @@ def grupos(datos, connection):
     grupodf = datos.drop_duplicates(
         ['COD_PERIODO', 'COD_ASIGNATURA', 'GRUPO', 'CORREO_DOCENTE'], keep='first')
     print(grupodf.shape)
+    print(grupodf.iterrows())
+
+    for index, row in grupodf.iterrows():
+        print(index)
+        print(row['GRUPO'])
+        print(row['COD_ASIGNATURA'])
+        print(row['CORREO_DOCENTE'])
 
     sqldelete = 'DELETE FROM public.grupos;'
     sqlAlterSeqnce = 'ALTER SEQUENCE grupos_grp_id_seq RESTART WITH 1;'
 
     sql = """INSERT INTO grupos
                  ( grp_nombre, grp_periodo, grp_habilitado, grp_asi_id, grp_doc_id)
-                VALUES ( %s, %s,%s, %s, %s )"""
+                VALUES ( %s, %s,%s, %s, %s )
+                 """
 
     sqlDoce = "SELECT * FROM docentes "
     sqlAsig = "SELECT * FROM asignaturas "
@@ -170,8 +180,8 @@ def grupos(datos, connection):
         cur = conn.cursor()
         contadorasig = 0
 
-        cur.execute(sqldelete)
-        cur.execute(sqlAlterSeqnce)
+        # cur.execute(sqldelete)
+        # cur.execute(sqlAlterSeqnce)
 
         # docente = cur.execute(sqlDoc, ('0103771648'))
         cur.execute(sqlDoce)
@@ -205,6 +215,7 @@ def grupos(datos, connection):
                 if(rowA[3] == row['COD_ASIGNATURA']):
                     asiId = rowA[0]
                     break
+
             cur.execute(
                 sql, (name, perido, habilitado,  asiId, docId))
 
@@ -242,8 +253,8 @@ def inscripcion_grupos(datos, connection):
         conn = connection
         cur = conn.cursor()
 
-        cur.execute(sqldelete)
-        cur.execute(sqlAlterSeqnce)
+        # cur.execute(sqldelete)
+        # cur.execute(sqlAlterSeqnce)
 
         # docente = cur.execute(sqlDoc, ('0103771648'))
         cur.execute(sqlgrupos)
@@ -325,8 +336,8 @@ def studen_outcomes(connection):
 
         conn = connection
         cur = conn.cursor()
-        cur.execute(sqldelete)
-        cur.execute(sqlAlterSeqnce)
+        # cur.execute(sqldelete)
+        # cur.execute(sqlAlterSeqnce)
         for so in dataSO.soData:
             cod = so['cod']
             des = so['des']
@@ -356,8 +367,8 @@ def criterios_so(connection):
 
         conn = connection
         cur = conn.cursor()
-        cur.execute(sqldelete)
-        cur.execute(sqlAlterSeqnce)
+        # cur.execute(sqldelete)
+        # cur.execute(sqlAlterSeqnce)
         for cri in dataSO.criteriosData:
             des = cri['des']
             codFK = cri['so_id']
@@ -386,8 +397,8 @@ def niveles_cri(connection):
 
         conn = connection
         cur = conn.cursor()
-        cur.execute(sqldelete)
-        cur.execute(sqlAlterSeqnce)
+        # cur.execute(sqldelete)
+        # cur.execute(sqlAlterSeqnce)
         indexNvl = 0
         indexCri = 1
         nivelesTipos = ["Inicial",	"En Desarrollo",	"Ideal",	"Avanzado"]
@@ -424,18 +435,18 @@ def crit_asignatura(connection):
 
         conn = connection
         cur = conn.cursor()
-        cur.execute(sqldelete)
-        cur.execute(sqlAlterSeqnce)
+        # cur.execute(sqldelete)
+        # cur.execute(sqlAlterSeqnce)
 
         # FOR para asignaturas
         # for cra in dataSO.criteriosAsignaturas:
         # FOR para graduados
         # for cra in dataSO.criteriosAsignaturasGraduados:
         # FOR para asignatura Empresas
-        # for cra in dataSO.criteriosAsignaturasEMPRESAS:
+        for cra in dataSO.criteriosAsignaturasEMPRESAS:
 
-        # FOR para asignatura Electrica
-        for cra in dataSO.criteriosAsignaturas:
+            # FOR para asignatura Electrica
+            # for cra in dataSO.criteriosAsignaturas:
 
             asi_id = cra['asi_id']
             cri_id = cra['cri_id']
@@ -486,15 +497,15 @@ def deleteData(connection):
 
 # deleteData(connection)
 
-asignaturas(df, connection)
-docentes(df, connection)
-estudintes(df, connection=connection)
-grupos(df, connection=connection)
-inscripcion_grupos(df, connection=connection)
+# asignaturas(df, connection)
+# docentes(df, connection)
+# estudintes(df, connection=connection)
+# grupos(df, connection=connection)
+# inscripcion_grupos(df, connection=connection)
 
-studen_outcomes(connection)
-criterios_so(connection=connection)
-niveles_cri(connection=connection)
+# studen_outcomes(connection)
+# criterios_so(connection=connection)
+# niveles_cri(connection=connection)
 crit_asignatura(connection=connection)
 
 connection.close()

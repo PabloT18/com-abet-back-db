@@ -311,76 +311,25 @@ nivelesCri = [
 ]
 
 criteriosAsignaturasEMPRESAS = [
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 1
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 2
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 3
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 4
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 5
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 6
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 7
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 8
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 9
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 10
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 11
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 12
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 13
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 14
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 15
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 16
-    },
-    {
-        "asi_id": "E-CT-ICO-EMP-ICC",
-        "cri_id": 17
-    },
-
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 1},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 2},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 3},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 5},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 6},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 8},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 9},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 11},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 12},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 14},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 15},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 17},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 18},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 19},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 20},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 22},
+    {'asi_id': 'E-CT-IEL-EGEM-001', 'cri_id': 23},
 ]
+  
 
 criteriosAsignaturasGraduados = [
     {
