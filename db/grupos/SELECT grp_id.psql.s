@@ -47,3 +47,6 @@ SELECT 'inscripciones_grupo' AS tabla, COUNT(*) AS total
 FROM public.inscripciones_grupo
 -- Agrega más tablas según necesites
 ORDER BY tabla;
+
+
+SELECT 'asignaturas' AS tabla, COUNT(*) AS total FROM public.asignaturas UNION ALL SELECT 'docentes' AS tabla, COUNT(*) AS total FROM public.docentes UNION ALL SELECT 'estudiantes' AS tabla, COUNT(*) AS total FROM public.estudiantes UNION ALL SELECT 'grupos' AS tabla, COUNT(*) AS total FROM public.grupos UNION ALL SELECT 'inscripciones_grupo' AS tabla, COUNT(*) AS total FROM public.inscripciones_grupo ORDER BY tabla;
