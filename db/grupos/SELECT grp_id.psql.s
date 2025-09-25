@@ -10,6 +10,13 @@ LIMIT 1000;
 ALTER TABLE public.asignaturas 
 ADD COLUMN asi_descripcion_en INTEGER;
 
+ALTER TABLE public.asignaturas 
+ADD COLUMN asi_descripcion_en TEXT;
+
+-- Eliminar la constraint de unicidad en est_cedula
+ALTER TABLE public.estudiantes 
+DROP CONSTRAINT estudiantes_est_cedula_key;
+
 -- Agregar la nueva columna grp_periodo
 ALTER TABLE public.grupos 
 ADD COLUMN grp_periodo INTEGER;
