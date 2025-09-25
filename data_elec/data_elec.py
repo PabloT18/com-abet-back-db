@@ -403,6 +403,14 @@ criteriosAsignaturasGraduados = [
 
 ]
 
+criteriosAsignaturas65 = [
+    {'asi_id': 'E-CT-ICO-151', 'cri_id': 1},
+    {'asi_id': 'E-CT-ICO-151', 'cri_id': 2},
+    {'asi_id': 'E-CT-ICO-151', 'cri_id': 3},
+    {'asi_id': 'E-CT-ICO-151', 'cri_id': 4},
+    
+    
+    ]
 
 criteriosAsignaturas = [
     {'asi_id': 'C-CE-IEL-101', 'cri_id': 1},

@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "🚀 ABET Import System",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/importacion/main.py",
+            "cwd": "${workspaceFolder}/importacion",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/importacion"
+            }
+        },
+        {
+            "name": "🐍 Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${fileDirname}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}

@@ -495,17 +495,167 @@ def deleteData(connection):
     # conn.close()
 
 
-# deleteData(connection)
+def mostrar_menu():
+    print("\n" + "="*60)
+    print("           MENÚ DE IMPORTACIÓN DE DATOS ABET")
+    print("="*60)
+    print("1.  Limpiar toda la base de datos")
+    print("2.  Importar Asignaturas")
+    print("3.  Importar Docentes")
+    print("4.  Importar Estudiantes")
+    print("5.  Importar Grupos")
+    print("6.  Importar Inscripciones de Grupos")
+    print("7.  Importar Student Outcomes")
+    print("8.  Importar Criterios SO")
+    print("9.  Importar Niveles de Criterios")
+    print("10. Importar Criterios-Asignaturas")
+    print("-"*60)
+    print("11. Importación COMPLETA (pasos 1-10)")
+    print("12. Importación SIN LIMPIAR (pasos 2-10)")
+    print("13. Solo Student Outcomes (pasos 7-10)")
+    print("-"*60)
+    print("0.  Salir")
+    print("="*60)
 
-#asignaturas(df, connection)
-#docentes(df, connection)
-#estudintes(df, connection=connection)
-#grupos(df, connection=connection)
-#inscripcion_grupos(df, connection=connection)
+def ejecutar_opcion(opcion, df, connection):
+    try:
+        if opcion == "1":
+            print("🗑️  Limpiando base de datos...")
+            deleteData(connection)
+            print("✅ Base de datos limpiada exitosamente")
+            
+        elif opcion == "2":
+            print("📚 Importando asignaturas...")
+            asignaturas(df, connection)
+            print("✅ Asignaturas importadas exitosamente")
+            
+        elif opcion == "3":
+            print("👨‍🏫 Importando docentes...")
+            docentes(df, connection)
+            print("✅ Docentes importados exitosamente")
+            
+        elif opcion == "4":
+            print("🎓 Importando estudiantes...")
+            estudintes(df, connection)
+            print("✅ Estudiantes importados exitosamente")
+            
+        elif opcion == "5":
+            print("👥 Importando grupos...")
+            grupos(df, connection)
+            print("✅ Grupos importados exitosamente")
+            
+        elif opcion == "6":
+            print("📝 Importando inscripciones de grupos...")
+            inscripcion_grupos(df, connection)
+            print("✅ Inscripciones importadas exitosamente")
+            
+        elif opcion == "7":
+            print("🎯 Importando Student Outcomes...")
+            studen_outcomes(connection)
+            print("✅ Student Outcomes importados exitosamente")
+            
+        elif opcion == "8":
+            print("📋 Importando Criterios SO...")
+            criterios_so(connection)
+            print("✅ Criterios SO importados exitosamente")
+            
+        elif opcion == "9":
+            print("📊 Importando Niveles de Criterios...")
+            niveles_cri(connection)
+            print("✅ Niveles de Criterios importados exitosamente")
+            
+        elif opcion == "10":
+            print("🔗 Importando Criterios-Asignaturas...")
+            crit_asignatura(connection)
+            print("✅ Criterios-Asignaturas importados exitosamente")
+            
+        elif opcion == "11":
+            print("🚀 Ejecutando importación COMPLETA...")
+            print("Paso 1/10: Limpiando base de datos...")
+            deleteData(connection)
+            print("Paso 2/10: Importando asignaturas...")
+            asignaturas(df, connection)
+            print("Paso 3/10: Importando docentes...")
+            docentes(df, connection)
+            print("Paso 4/10: Importando estudiantes...")
+            estudintes(df, connection)
+            print("Paso 5/10: Importando grupos...")
+            grupos(df, connection)
+            print("Paso 6/10: Importando inscripciones...")
+            inscripcion_grupos(df, connection)
+            print("Paso 7/10: Importando Student Outcomes...")
+            studen_outcomes(connection)
+            print("Paso 8/10: Importando Criterios SO...")
+            criterios_so(connection)
+            print("Paso 9/10: Importando Niveles de Criterios...")
+            niveles_cri(connection)
+            print("Paso 10/10: Importando Criterios-Asignaturas...")
+            crit_asignatura(connection)
+            print("🎉 ¡Importación COMPLETA finalizada exitosamente!")
+            
+        elif opcion == "12":
+            print("🚀 Ejecutando importación SIN LIMPIAR...")
+            print("Paso 1/9: Importando asignaturas...")
+            asignaturas(df, connection)
+            print("Paso 2/9: Importando docentes...")
+            docentes(df, connection)
+            print("Paso 3/9: Importando estudiantes...")
+            estudintes(df, connection)
+            print("Paso 4/9: Importando grupos...")
+            grupos(df, connection)
+            print("Paso 5/9: Importando inscripciones...")
+            inscripcion_grupos(df, connection)
+            print("Paso 6/9: Importando Student Outcomes...")
+            studen_outcomes(connection)
+            print("Paso 7/9: Importando Criterios SO...")
+            criterios_so(connection)
+            print("Paso 8/9: Importando Niveles de Criterios...")
+            niveles_cri(connection)
+            print("Paso 9/9: Importando Criterios-Asignaturas...")
+            crit_asignatura(connection)
+            print("🎉 ¡Importación SIN LIMPIAR finalizada exitosamente!")
+            
+        elif opcion == "13":
+            print("🎯 Ejecutando importación de Student Outcomes...")
+            print("Paso 1/4: Importando Student Outcomes...")
+            studen_outcomes(connection)
+            print("Paso 2/4: Importando Criterios SO...")
+            criterios_so(connection)
+            print("Paso 3/4: Importando Niveles de Criterios...")
+            niveles_cri(connection)
+            print("Paso 4/4: Importando Criterios-Asignaturas...")
+            crit_asignatura(connection)
+            print("🎉 ¡Student Outcomes importados exitosamente!")
+            
+        else:
+            print("❌ Opción no válida. Por favor, selecciona una opción del 0 al 13.")
+            return False
+            
+    except Exception as e:
+        print(f"❌ Error al ejecutar la opción {opcion}: {str(e)}")
+        return False
+    
+    return True
 
-# studen_outcomes(connection)
-# criterios_so(connection=connection)
-# niveles_cri(connection=connection)
-crit_asignatura(connection=connection)
+def main():
+    print("🔌 Conectando a la base de datos ups_abet_elec...")
+    print(f"📊 Datos cargados: {df.shape[0]} filas, {df.shape[1]} columnas")
+    
+    while True:
+        mostrar_menu()
+        opcion = input("👉 Selecciona una opción (0-13): ").strip()
+        
+        if opcion == "0":
+            print("👋 ¡Hasta luego! Cerrando conexión...")
+            break
+        
+        ejecutar_opcion(opcion, df, connection)
+        
+        if opcion != "0":
+            input("\n⏸️  Presiona ENTER para continuar...")
+
+# Ejecutar el programa principal
+if __name__ == "__main__":
+    main()
 
 connection.close()

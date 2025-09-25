@@ -1,14 +1,14 @@
 /// arreglar postgres 
 en /etc/postgresql/12/main
 // archivo a editar
-psql -U pablodb -d ups_abet -W
-
+sudo nano pg_hba.conf
 Cambiar md5 por peer
 
 // reiniciar postgres
 sudo systemctl restart postgresql
 
 // entrar a ups_abet
+psql -U pablodb -d ups_abet -W
 psql -U pablodb -d ups_abet -W
 
 
